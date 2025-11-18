@@ -1,8 +1,9 @@
-# ALX Travel App 0x00
+# Check existence
+ls README.md
 
-A Django backend project for managing travel listings, bookings, and reviews. This project demonstrates database modeling, API serialization, and database seeding.
-
----
-
-## **Project Structure**
-
+# Check if not empty
+if [ -s README.md ]; then
+    echo "README.md exists and is not empty"
+else
+    echo "README.md is missing or empty"
+fi
