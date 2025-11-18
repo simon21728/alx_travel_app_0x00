@@ -1,11 +1,8 @@
-#!/bin/bash
+import os
 
-FILES=("README.md" "listings/models.py" "listings/serializers.py")
+readme_path = "README.md"
 
-for FILE in "${FILES[@]}"; do
-    if [ -f "$FILE" ] && [ -s "$FILE" ]; then
-        echo "$FILE exists and is not empty ✅"
-    else
-        echo "$FILE is missing or empty ❌"
-    fi
-done
+if os.path.isfile(readme_path) and os.path.getsize(readme_path) > 0:
+    print("README file exists and is not empty ")
+else:
+    print("README file is missing or empty ")
