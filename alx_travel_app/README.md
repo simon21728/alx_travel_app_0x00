@@ -1,9 +1,11 @@
-# Check existence
-ls README.md
+#!/bin/bash
 
-# Check if not empty
-if [ -s README.md ]; then
-    echo "README.md exists and is not empty"
-else
-    echo "README.md is missing or empty"
-fi
+FILES=("README.md" "listings/models.py" "listings/serializers.py")
+
+for FILE in "${FILES[@]}"; do
+    if [ -f "$FILE" ] && [ -s "$FILE" ]; then
+        echo "$FILE exists and is not empty ✅"
+    else
+        echo "$FILE is missing or empty ❌"
+    fi
+done
